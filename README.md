@@ -1,1 +1,3 @@
-# CCWC-workshop
+# CCWC-2020 IoT workshop
+#
+#
