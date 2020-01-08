@@ -1,1 +1,40 @@
-IoT Workshop, part 2, set up1. This explains the process:   https://github.com/wimvanderbauwhede/limited-systems/wiki/Raspbian-%22stretch%22-for-Raspberry-Pi-3-on-QEMU2. Prepare main folder   mkdir 2020/  cd 20203. Get board and memory   https://downloads.raspberrypi.org/raspbian_lite_latest4. Get modified kernel   git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git5. Go to subdirectory   cd qemu-rpi-kernel6. Run simulator on modified system   qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda ../2019-09-26-raspbian-buster-lite.img -net nic -net user,hostfwd=tcp::5022-:22 -dtb ./versatile-pb.dtb    -kernel ./kernel-qemu-4.14.79-stretch -append 'root=/dev/sda2 panic=1' -no-rebootTestingGuest> sudo systemctl start  ssh Host> ssh -p 5022 pi@localhostBoot several Raspberry Pis but using different port mappings!The port mappings are in the above qemu-system-arm command:  -net user,hostfwd=tcp::5022-:22  -net user,hostfwd=tcp::5023-:22  -net user,hostfwd=tcp::5024-:22
+IoT Workshop, part 2, set up
+
+0. Install QEMU for Windows: https://www.qemu.org/download/
+   Install Eclipse for Java
+
+1. This explains the process:
+   https://github.com/wimvanderbauwhede/limited-systems/wiki/Raspbian-%22stretch%22-for-Raspberry-Pi-3-on-QEMU
+
+
+2. Prepare main folder 
+  mkdir 2020/
+  cd 2020
+
+3. Get board and memory
+   https://downloads.raspberrypi.org/raspbian_lite_latest
+
+4. Get modified kernel
+   git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git
+
+
+5. Go to subdirectory
+   cd qemu-rpi-kernel
+
+6. Run simulator on modified system
+   qemu-system-arm -M versatilepb -cpu arm1176 -m 256 -hda ../2019-09-26-raspbian-buster-lite.img -net nic -net user,hostfwd=tcp::5022-:22 -dtb ./versatile-pb.dtb    -kernel ./kernel-qemu-4.14.79-stretch -append 'root=/dev/sda2 panic=1' -no-reboot
+
+
+Testing
+
+Guest> sudo systemctl start  ssh 
+
+Host> ssh -p 5022 pi@localhost
+
+
+Boot several Raspberry Pis but using different port mappings!
+The port mappings are in the above qemu-system-arm command:
+
+  -net user,hostfwd=tcp::5022-:22
+  -net user,hostfwd=tcp::5023-:22
+  -net user,hostfwd=tcp::5024-:22
