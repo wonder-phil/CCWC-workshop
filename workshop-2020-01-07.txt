@@ -6,14 +6,14 @@ IoT Workshop, part 2, set up
 1. This explains some of our following QEMU process:
    https://github.com/wimvanderbauwhede/limited-systems/wiki/Raspbian-%22stretch%22-for-Raspberry-Pi-3-on-QEMU
    
-2. Prepare main folder 
+2. Prepare main folder: called gold on MEMORY STICK.  Copy and rename to Rpi1
   mkdir Rpi1/
   cd Rpi1
 
-3. Get board and memory  (ON MEMORY STICK)
+3. Get board and memory  (ON MEMORY STICK: gold)
    https://downloads.raspberrypi.org/raspbian_lite_latest
 
-4. Get modified kernel  (ON MEMORY STICK)
+4. Get modified kernel  (ON MEMORY STICK: gold)
    git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git
 
 5. Go to subdirectory or Rpi1
