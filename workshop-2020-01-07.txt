@@ -1,24 +1,22 @@
 IoT Workshop, part 2, set up
 
 0. Install QEMU for Windows: https://www.qemu.org/download/
-   Install Eclipse for Java
+   Install Eclipse for Java: https://www.eclipse.org/downloads/packages/
 
-1. This explains the process:
+1. This explains some of our following QEMU process:
    https://github.com/wimvanderbauwhede/limited-systems/wiki/Raspbian-%22stretch%22-for-Raspberry-Pi-3-on-QEMU
-
-
+   
 2. Prepare main folder 
-  mkdir 2020/
-  cd 2020
+  mkdir Rpi1/
+  cd Rpi1
 
-3. Get board and memory
+3. Get board and memory  (ON MEMORY STICK)
    https://downloads.raspberrypi.org/raspbian_lite_latest
 
-4. Get modified kernel
+4. Get modified kernel  (ON MEMORY STICK)
    git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git
 
-
-5. Go to subdirectory
+5. Go to subdirectory or Rpi1
    cd qemu-rpi-kernel
 
 6. Run simulator on modified system
